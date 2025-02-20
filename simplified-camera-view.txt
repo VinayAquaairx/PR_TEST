@@ -1,0 +1,76 @@
+import QtQuick 2.15
+import QtQuick.Controls 2.15
+import QtQuick.Layouts 1.15
+import QtMultimedia
+import DroneGCS 1.0
+
+Rectangle {
+    id: camView
+    color: "#333333"
+    property var controller
+
+    VideoReceiver {
+        id: videoReceiver
+        streamUrl: "rtsp://192.168.2.2:8554/stream"
+        lowLatencyMode: true
+
+        onStreamError: function(error) {
+            console.log("Stream error:", error)
+            errorMessage.visible = true
+            errorText.text = error
+        }
+    }
+
+    MediaPlayer {
+        id: player
+        source: videoReceiver.streamUrl
+        videoOutput: videoOutput
+
+        onErrorOccurred: function(error, errorString) {
+            console.log("Media error:", error, errorString)
+            errorMessage.visible = true
+            errorText.text = errorString
+        }
+        
+        onMediaStatusChanged: function(status) {
+            console.log("Media status:", status)
+            if (status === MediaPlayer.Buffered) {
+                errorMessage.visible = false
+            }
+        }
+    }
+
+    VideoOutput {
+        id: videoOutput
+        anchors.fill: parent
+        fillMode: VideoOutput.PreserveAspectFit
+    }
+
+    Rectangle {
+        id: errorMessage
+        visible: false
+        color: "#aa000000"
+        anchors.fill: parent
+
+        Text {
+            id: errorText
+            anchors.centerIn: parent
+            color: "white"
+            text: ""
+        }
+    }
+
+    Component.onCompleted: {
+        player.play()
+    }
+
+    function startStream() {
+        console.log("Starting stream...")
+        player.play()
+    }
+
+    function stopStream() {
+        console.log("Stopping stream...")
+        player.stop()
+    }
+}
