@@ -28,7 +28,7 @@ const styles = {
 };
 
 const mapStyles = {
-  height: '400px',
+  height: '200px',
   width: '100%',
   marginBottom: '15px',
 };
