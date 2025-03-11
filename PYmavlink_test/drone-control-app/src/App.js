@@ -19,11 +19,11 @@ const styles = {
   compass: { width: '200px', height: '200px', border: '2px solid black', borderRadius: '50%', position: 'relative' },
   compassNeedle: { width: '2px', height: '80px', backgroundColor: 'red', position: 'absolute', top: '50%', left: '50%', transformOrigin: 'bottom center' },
   notificationBox: {
-    height: '200px',
+    height: '201px',
     overflowY: 'scroll',
     border: '1px solid #ccc',
     padding: '10px',
-    marginBottom: '18px',
+    marginBottom: '25px',
   },
 };
 
