@@ -23,7 +23,7 @@ const styles = {
     overflowY: 'scroll',
     border: '1px solid #ccc',
     padding: '10px',
-    marginBottom: '15px',
+    marginBottom: '25px',
   },
 };
 
