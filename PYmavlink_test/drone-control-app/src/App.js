@@ -12,7 +12,7 @@ const styles = {
   cardTitle: { fontSize: '18px', fontWeight: 'bold', marginBottom: '10px' },
   input: { width: '100%', padding: '8px', marginBottom: '10px' },
   select: { width: '100%', padding: '8px', marginBottom: '10px' },
-  button: { backgroundColor: '#4CAF50', border: 'none', color: 'white', padding: '10px 20px', textAlign: 'center', textDecoration: 'none', display: 'inline-block', fontSize: '16px', margin: '4px 2px', cursor: 'pointer' },
+  button: { backgroundColor: '#4CAF50', border: 'none', color: 'red', padding: '10px 20px', textAlign: 'center', textDecoration: 'none', display: 'inline-block', fontSize: '16px', margin: '4px 2px', cursor: 'pointer' },
   grid: { display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(250px, 1fr))', gap: '15px' },
   horizon: { width: '200px', height: '200px', border: '2px solid black', borderRadius: '50%', position: 'relative', overflow: 'hidden' },
   horizonLine: { width: '100%', height: '2px', backgroundColor: 'black', position: 'absolute', top: '50%', transform: 'translateY(-50%)' },
